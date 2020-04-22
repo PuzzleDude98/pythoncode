@@ -16,26 +16,31 @@ r4="Please go on"
 r5="Why do you want"
 r6="Goodbye."
 r7="Hello!"
+r8="You already said that. Why did you say that again?"
 print("I am ELIZA, the artificial therapist.")
 print("Type 'goodbye' at any time to end our conversation.")
 print("What's bothering you?")
 
+rlist=""
+
 r=""
 while not r.lower()=="goodbye":
     r=input()
-
-
     iw= r.split( )
     r=r.lower()
+    
+
     if r.endswith("."):
         r=r.replace(".","")
     if r.endswith("!"):
         r=r.replace("!","")
-    if iw[0].lower()=="i" and iw[1].lower()=="want" and r.find(" but ")==(-1) :
+    if not rlist.find(r)==(-1):
+        rc=8
+    elif iw[0].lower()=="i" and iw[1].lower()=="want" and r.find(" but ")==(-1) :
         rc=5
         r=r.replace("i want ","")
     elif iw[0].lower()=="i" and iw[1].lower()=="want":
-        rc=1
+        rc=3
     elif r.lower()=="goodbye":
         rc=6
     elif iw[0].lower()=="hello":
@@ -62,3 +67,8 @@ while not r.lower()=="goodbye":
         
     elif rc==7:
         print (r7)
+        
+    elif rc==8:
+        print (r8)
+        
+    rlist=(rlist+" "+r)
