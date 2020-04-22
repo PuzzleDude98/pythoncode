@@ -1,0 +1,59 @@
+"""
+ELIZA
+
+Description: a virtual therapist
+"""
+"""
+LESSON: 2.5 - Randomness & Libraries
+EXERCISE: Virtual Friend
+"""
+import random
+
+r1="I see. Tell me more."
+r2="I'm not quite sure what you mean. Can you elaborate on that?"
+r3="And how does that make you feel?"
+r4="Why do you want"
+r5="Goodbye."
+r6="Hello!"
+print("I am ELIZA, the artificial therapist.")
+print("Type 'goodbye' at any time to end our conversation.")
+print("What's bothering you?")
+
+r=""
+while not r.lower()=="goodbye":
+    r=input()
+
+
+    iw= r.split( )
+    r=r.lower()
+    if r.endswith("."):
+        r=r.replace(".","")
+    if r.endswith("!"):
+        r=r.replace("!","")
+    if iw[0].lower()=="i" and iw[1].lower()=="want" and r.find(" but ")==(-1) :
+        rc=4
+        r=r.replace("i want ","")
+
+    elif r.lower()=="goodbye":
+        rc=5
+    elif iw[0].lower()=="hello":
+        rc=6
+    else:
+        rc=random.randint(1,3)
+    if rc==1:
+        print (r1)
+
+    elif rc==2:
+        print (r2)
+
+    elif rc==3:
+        print (r3)
+
+    elif rc==4:
+        print (r4,r+"?")
+    
+    elif rc==5:
+        print (r5)
+        
+    elif rc==6:
+        print (r6)
