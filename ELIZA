@@ -44,7 +44,7 @@ while not r.lower()=="goodbye":
     elif r.lower()=="goodbye":
         rc=6
     elif iw[0].lower()=="hello":
-        rc=6
+        rc=7
     else:
         rc=random.randint(1,4)
     if rc==1:
