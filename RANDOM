@@ -1,0 +1,33 @@
+"""
+RANDOM
+
+Description:
+"""
+import random
+a=[]
+x=1
+print("1. list of random")
+print("2. random list of random")
+a=int(input("1 or 2?"))
+if a==1:
+    while x<=75:
+        a.append("No dill")
+        x+=1
+    x=1
+    while x<=25:
+        a.append("Dill")
+        x+=1
+    random.shuffle(a)
+
+elif a==2:
+    while x<=100:
+        a.append(random.choice(["No dill", "No dill", "No dill", "Dill"]))
+        x+=1
+
+a.append("End")
+print(a.index("End"))
+a.remove("End")
+x=1
+while x<100:
+    print(str(a[x]),"items")
+    x+=1
