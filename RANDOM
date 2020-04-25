@@ -11,17 +11,17 @@ print("2. random list of random")
 a=int(input("1 or 2?"))
 if a==1:
     while x<=75:
-        a.append("No dill")
+        a.append("No")
         x+=1
     x=1
     while x<=25:
-        a.append("Dill")
+        a.append("Yes")
         x+=1
     random.shuffle(a)
 
 elif a==2:
     while x<=100:
-        a.append(random.choice(["No dill", "No dill", "No dill", "Dill"]))
+        a.append(random.choice(["No", "No", "No", "Yes"]))
         x+=1
 
 a.append("End")
