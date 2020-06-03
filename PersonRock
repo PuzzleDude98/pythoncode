@@ -22,7 +22,7 @@ ground_rect = pygame.Rect(0, 340, 400, 60)
 rock_rect = pygame.Rect(20, rock_y, 150, 340)
 person_rect = pygame.Rect(person_x, 300, 30, 40)
 
-# Declare an offset for the rock and person
+# Declare an offsets for the rock and person
 ro=0
 po=0
 po2=0
@@ -41,8 +41,8 @@ while frames < 120:
         ro+=2
     else:
         person_color=a
-    # If the rock offset is higher than 80,
-    # increase the person offset
+    # If the rock offset is higher than 160,
+    # increase the person offsets
     if ro>160:
         po+=2
         po2+=1
