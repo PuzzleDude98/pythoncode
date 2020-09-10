@@ -1,4 +1,9 @@
 """
+NOTE: this uses pygame. Most editors do not.
+If you want to run this, make sure you have pygame
+"""
+
+"""
 PersonRock
 
 Description: An animation
@@ -64,6 +69,3 @@ while frames < 120:
     pygame.time.wait(40)
 
     frames += 1
-
-
-# Turn in your Coding Exercise.
